@@ -9,8 +9,8 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="normalize.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css" />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,7 +20,7 @@
 
   <body>
     <header class="header">
-      <img class="logo" src="logo_coffeeshop_dark.svg" alt="logo" />
+      <img class="logo" src="/logo_coffeeshop_light.svg" alt="logo" />
 
       <nav class="nav">
         <ul class="nav-links">
@@ -48,7 +48,7 @@
       </div>
       <img
         class="header-image"
-        src="inside_coffee_shop.png"
+        src="/inside_coffee_shop.png"
         alt="header-image"
       />
     </header>
@@ -67,7 +67,80 @@
         </p>
       </div>
     </main>
+<div class="reservation" id="reservar_mesa">
+      <h2 class="reservation-title">Reservar una mesa</h2>
+      <form class="reservation-form">
 
-    <footer class="footer"></footer>
+        <label for="name" class="reservation-label">Nombre *</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Nombre"
+          class="reservation-input"
+          required
+        />
+
+        <label for="number_of_people" class="reservation-label">numero de comensales *</label>
+        <input
+          type="number"
+          id="number_of_people"
+          name="number_of_people"
+          placeholder="1-8"
+          class="reservation-input"
+          required
+        />
+
+        <label for="date" class="reservation-label">Fecha de reserva *</label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+          class="reservation-input"
+          required
+        />
+
+         <label for="email" class="reservation-label">Correo electrónico *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="email@email.com"
+          class="reservation-input"
+          required
+        />
+
+         <button type="submit" class="reservation-button">Reservar una mesa</button>
+
+        <label for="terms and conditions" class="reservation-label">
+          <input type="checkbox" id="terms and conditions" name="terms and conditions" class="reservation-checkbox" required />
+          Acepto los términos de uso
+        </label>
+      </form>
+    <footer class="footer">
+       <img class="footer-logo" src="images/logo_coffeeshop_light.svg" alt="logo" />
+
+      <div class="footer-content">
+        <p class="footer-text">Redes sociales</p>
+        <div class="social-media-icons" id="contactos">
+          <ul>
+            <li>
+              <a href="#" class="social-media-link">
+                <img src="/facebook_white.svg" alt="Facebook" color="#F2F2F2" />
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-media-link">
+                <img src="/instagram_white.svg" alt="Instagram" color="#F2F2F2" />
+                Instagram
+              </a>
+            </li>
+          </ul>
+        </div>
+         <p class="footer-text">© 2026 Ricardo Piña</p>
+      </div>
+    </footer>
   </body>
 </html>
+
