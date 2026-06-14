@@ -5,7 +5,8 @@
   margin: 30px 30px;
 }
 .header-title {
-  padding: 80px 183px;
+  margin: 0;
+  max-width: 700px;
   font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -29,8 +30,8 @@
   font-weight: normal;
   font-size: 20px;
   line-height: 30px;
-  position: absolute;
-  margin-right: 550px;
+  margin: 24px 0 0 0;
+  max-width: 560px;
 }
 body {
   min-width: 1100px;
@@ -43,19 +44,51 @@ body {
 }
 
 .header {
-  background-color: #ffffff;
-  background-image: url(/web_project_coffeeshop_es/images/background_header.svg);
+  background-color: #f7f7f7;
+  background-image: url(../images/background_header.svg);
   position: relative;
   display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px 60px 48px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+}
+.header-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.header-text {
+  max-width: 560px;
 }
 .header-image {
-  width: 450px;
+  width: min(520px, 100%);
   height: auto;
-  margin: 124px 80px 5px 40px;
+  margin: 0;
+}
+.header-hours {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .info-text {
   font-family: "Inter", "Arial", sans-serif;
@@ -64,19 +97,8 @@ body {
   font-size: 16px;
   line-height: 20px;
   color: #6f6f6f;
-  margin-bottom: 40px;
-  margin-left: 80px;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
+  margin: 0;
 }
-.span-info {
-  bottom: 0;
-  right: 0;
-  margin-bottom: 40px;
-  margin-right: 80px;
-}
-
 #contactos {
   text-decoration: none;
   color: #6f6f6f;
@@ -89,61 +111,195 @@ body {
   font-weight: bold;
 }
 .nav-links {
-  font-family: "Inter", "arial", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  position: absolute;
-  top: 30px;
-  right: 26px;
+  list-style: none;
   display: flex;
-  align-items: center;
-  padding: 20px;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 500;
+}
+.nav-links a {
+  color: #1f1f1f;
   text-decoration: none;
-  color: #6f6f6f;
-  font-weight: bold;
-  margin: 55px;
-  opacity: 1;
-  style: none;
-  underline: none;
-  text-decoration: none;
+}
+.nav-links a:hover {
+  color: #ff976b;
 }
 
 a:visited {
   color: #6f6f6f;
 }
 
-.reservation {
-  background-color: #ffd6c5;
-  background-image: url(../images/background_header.svg);
-  max-width: 385px;
-  background-width: 100%;
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  width: 100%;
-  margin: 0 auto;
-  padding: 40px 32px;
-  display: flex;
-  flex-direction: column;
-}
-.footer {
-  background-color: #d35722;
-  text-align: center;
-  color: #f2f2f2;
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  min-width: 1100px;
-  max-width: 2000px;
+  justify-content: center;
+  padding: 100px 0 120px;
+  background-color: #f1ded7;
+}
+
+.reservation {
+  background-image: url(../images/background_reservation.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  max-width: 700px;
+  width: calc(100% - 40px);
   margin: 0 auto;
-  with: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 58px 48px 48px;
+  border-radius: 32px;
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.reservation-button {
+  background-color: #b67b64;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 14px;
+  width: 100%;
+  padding: 16px 20px;
+  color: #ffffff;
+  text-transform: none;
+  border: none;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.reservation-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.reservation-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  margin: 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.reservation-input {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  min-height: 56px;
+  margin: 0;
+  padding: 16px 18px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.88);
+  color: #2c2c2c;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.reservation-input:focus {
+  outline: none;
+  border-color: #b67b64;
+  box-shadow: 0 0 0 4px rgba(182, 123, 100, 0.14);
+}
+
+.reservation-label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2c2c2c;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.reservation-checkbox {
+  width: auto;
+  margin-right: 12px;
+}
+
+.reservation-label:last-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.footer {
+  background-color: #d35722;
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px 48px;
+  width: 100%;
+  max-width: 2000px;
+  margin: 60px auto 0;
+  position: relative;
+  text-align: left;
+}
+.footer-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+}
+.footer-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+.footer-logo {
+  margin-bottom: 16px;
+}
+.footer-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+.social-media-link {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0;
+  text-decoration: none;
+  color: #f2f2f2;
 }
 .reservation-checkbox {
   display: flex;
@@ -159,48 +315,41 @@ a:visited {
 }
 
 .reservation-label {
-  border-radius: 4px 4px 4px 4px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
-  max-width: 385px;
+  color: #2d2d2d;
+  margin-bottom: 10px;
   display: block;
-  font-weight: 500;
-  margin-bottom: 8px;
 }
 
 .reservation-button {
-  background-color: #e96e3a;
+  background-color: #b67b64;
   font-family: "Inter";
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  border-radius: 4px 4px 4px 4px;
-  max-width: 385px;
-  width: 100%;
-  padding: 14px;
-  font-size: 18px;
   font-weight: 600;
-  transition: color 0.3s ease;
-  opacity: 1;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 12px;
+  width: 100%;
+  padding: 16px 20px;
+  color: #ffffff;
+  text-transform: none;
+  border: none;
   cursor: pointer;
-  transition: background 0.2s;
-  margin-bottom: 32px;
-  padding-top: 14px;
+  transition: opacity 0.2s ease;
+  margin-top: 8px;
 }
 
 .reservation-title {
   font-family: "Inter";
   font-style: normal;
-  font-weight: 500;
-  font-size: 44px;
-  line-height: 52px;
-  max-width: 385px;
-  font-size: 28px;
-  margin-bottom: 28px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  margin: 0;
   text-align: center;
 }
 
@@ -208,17 +357,26 @@ a:visited {
   font-family: "Inter";
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
-  line-height: 30px;
-  max-width: 385px;
-  width: 20px;
-  height: 20px;
-  margin: 0;
-  padding: 0;
-  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 24px;
   width: 100%;
-  padding: 12px 16px;
-  transition: 0.2s;
+  min-height: 48px;
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 12px;
+  background-color: #f3f0ee;
+  color: #2c2c2c;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.reservation-input:focus {
+  outline: none;
+  border-color: #c08b72;
+  box-shadow: 0 0 0 3px rgba(184, 124, 95, 0.12);
 }
 
 .circulo {
