@@ -2,11 +2,11 @@
   position: relative;
   width: 105px;
   height: 39px;
-  margin: 30px 30px;
+  margin: 0;
 }
 .header-title {
   margin: 0;
-  max-width: 700px;
+  max-width: 709px;
   font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -31,7 +31,7 @@
   font-size: 20px;
   line-height: 30px;
   margin: 24px 0 0 0;
-  max-width: 560px;
+  max-width: 683px;
 }
 body {
   min-width: 1100px;
@@ -50,7 +50,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding: 40px 60px 48px;
+  padding: 30px 30px 48px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -63,17 +63,23 @@ body {
 }
 .header-main {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 646px;
+  grid-template-rows: auto auto;
+  column-gap: 40px;
+  row-gap: 12px;
+  align-items: start;
 }
 .header-text {
-  max-width: 560px;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  max-width: 709px;
 }
 .header-image {
-  width: min(520px, 100%);
+  grid-column: 2;
+  grid-row: 1;
+  width: 646px;
+  max-width: 100%;
   height: auto;
   margin: 0;
 }
@@ -101,14 +107,19 @@ body {
 }
 /* address placement below header image */
 .info-address {
-  margin-top: 12px;
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end;
+  align-self: end;
+  margin-top: 0;
   color: #6f6f6f;
   font-weight: 500;
-  max-width: 520px;
+  max-width: 646px;
+  text-align: right;
 }
 
 .image-address {
-  margin-left: 12px;
+  margin-left: 0;
 }
 #contactos {
   text-decoration: none;
@@ -124,7 +135,7 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 26px;
   margin: 0;
   padding: 0;
   font-family: "Inter", "Arial", sans-serif;
@@ -149,7 +160,7 @@ a:visited {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 0 120px;
+  padding: 100px 0 0;
   background-color: #f1ded7;
 }
 
@@ -165,7 +176,8 @@ a:visited {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  align-items: center;
+  gap: 80px;
   padding: 58px 48px 48px;
   border-radius: 32px;
 }
@@ -173,9 +185,23 @@ a:visited {
 .reservation-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 32px;
+  width: 100%;
+  max-width: 385px;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+
+.reservation-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reservation-terms {
+  display: flex;
+  justify-content: center;
 }
 
 .reservation-button {
@@ -185,9 +211,10 @@ a:visited {
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
-  border-radius: 14px;
+  min-height: 60px;
+  border-radius: 2px;
   width: 100%;
-  padding: 16px 20px;
+  padding: 18px 20px;
   color: #ffffff;
   text-transform: none;
   border: none;
@@ -211,6 +238,8 @@ a:visited {
   margin: 0;
   text-align: center;
   z-index: 1;
+  width: 100%;
+  max-width: 385px;
 }
 
 .reservation-input {
@@ -220,12 +249,12 @@ a:visited {
   font-size: 16px;
   line-height: 24px;
   width: 100%;
-  min-height: 56px;
+  min-height: 60px;
   margin: 0;
-  padding: 16px 18px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 16px;
-  background-color: rgba(255, 255, 255, 0.88);
+  padding: 18px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.9);
   color: #2c2c2c;
   box-sizing: border-box;
   transition:
@@ -246,13 +275,14 @@ a:visited {
   font-size: 14px;
   line-height: 20px;
   color: #2c2c2c;
-  margin-bottom: 8px;
+  margin: 0;
   display: block;
 }
 
 .reservation-checkbox {
-  width: auto;
-  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  margin: 0;
 }
 
 .reservation-label:last-of-type {
@@ -275,7 +305,7 @@ a:visited {
   padding: 24px 48px;
   width: 100%;
   max-width: 2000px;
-  margin: 60px auto 0;
+  margin: 0 auto;
   position: relative;
   text-align: left;
 }
@@ -318,84 +348,6 @@ a:visited {
 .social-media-icons {
   margin-left: auto;
 }
-.reservation-checkbox {
-  display: flex;
-  border: 1px solid #4f4f4f;
-  align-items: center;
-  margin-bottom: 20px;
-  border-radius: 2px 2px 2px 2px;
-  max-width: 385px;
-}
-
-.reservation-checkbox:checked:after {
-  content: url("images/check.svg");
-}
-
-.reservation-label {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  color: #2d2d2d;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.reservation-button {
-  background-color: #b67b64;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
-  border-radius: 12px;
-  width: 100%;
-  padding: 16px 20px;
-  color: #ffffff;
-  text-transform: none;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-  margin-top: 8px;
-}
-
-.reservation-title {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 44px;
-  margin: 0;
-  text-align: center;
-}
-
-.reservation-input {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 24px;
-  width: 100%;
-  min-height: 48px;
-  margin: 0 0 20px;
-  padding: 14px 16px;
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  border-radius: 12px;
-  background-color: #f3f0ee;
-  color: #2c2c2c;
-  box-sizing: border-box;
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.reservation-input:focus {
-  outline: none;
-  border-color: #c08b72;
-  box-shadow: 0 0 0 3px rgba(184, 124, 95, 0.12);
-}
-
 .circulo {
   width: 100px;
   height: 100px;
@@ -420,9 +372,7 @@ a:visited {
   font-size: 16px;
   line-height: 20px;
   padding: 16px;
-  style: none;
   text-decoration: none;
-  underline: none;
 }
 
 .reservation-button:hover {
